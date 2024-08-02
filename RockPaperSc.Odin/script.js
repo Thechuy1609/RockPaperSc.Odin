@@ -12,35 +12,42 @@ function getComputerChoice() {
     const choice = getrandom(1, 3);
 
     if (choice === 1) {
-        console.log("Rock");
+        console.log("Rock")
+        return "rock";
     } else if (choice === 2) {
-        console.log("Paper");
+        console.log("Paper")
+        return "paper";
     } else {
-        console.log("Scissors");
+        console.log("Scissors")
+        return "scissors";
     }
 }
 
 //Human choice!
 
 function getHumanChoice () {
-let humanChoice = prompt("Rock, Paper or Scissors?");
-if (humanChoice === null) {
+let human = prompt("Rock, Paper or Scissors?");
+if (human === null) {
     console.log("So... You don't want to play?");
     return;
 }
 
-humanChoice = humanChoice.toLowerCase();
-if (humanChoice=== "rock"){
+human = human.toLowerCase();
+if (human === "rock"){
     console.log("Rock")
+    return human
 }
-else if (humanChoice === "paper"){
+else if (human === "paper"){
     console.log("Paper")
+    return human
 }
-else if (humanChoice === "scissors"){
+else if (human === "scissors"){
 console.log("Scissors")
+return human
 }
-else if (humanChoice === ""){
+else if (human === ""){
     console.log("what?")
+    return human
 }
 
 else {console.log("Not an option!")};
@@ -54,13 +61,34 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice,computerChoice){
+if (humanChoice === computerChoice ){
+    alert("Draw!")}
+else if (humanChoice === "rock" && computerChoice === "paper"){
+alert("Computer Wins!")
+}
+else if (humanChoice === "paper" && computerChoice === "scissors"){
+    alert("Computer Wins!")
+    }
+    else if (humanChoice === "scissors" && computerChoice === "rock"){
+        alert("Computer Wins!")
+        }
+        else if (humanChoice === "scissors" && computerChoice === "paper"){
+            alert("You Win!")
+            }
+            else if (humanChoice === "paper" && computerChoice === "rock"){
+                alert("You Win!")
+                }
+                else if (humanChoice === "rock" && computerChoice === "scissors"){
+                    alert("You Win!")
+                    }
 
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
 
-playRound(humanSelection, computerSelection)
+const humanChoice = getHumanChoice()
+const computerChoice = getComputerChoice()
+
+playRound(humanChoice, computerChoice)
 
 
 
