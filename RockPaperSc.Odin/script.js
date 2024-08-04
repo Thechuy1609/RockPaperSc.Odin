@@ -61,34 +61,73 @@ let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice,computerChoice){
-if (humanChoice === computerChoice ){
-    alert("Draw!")}
+
+    if (humanChoice === computerChoice ){
+    alert("Draw!") ; computerScore += 1; humanScore += 1}
 else if (humanChoice === "rock" && computerChoice === "paper"){
-alert("Computer Wins!")
+alert("Computer Wins!"); computerScore += 1
 }
 else if (humanChoice === "paper" && computerChoice === "scissors"){
-    alert("Computer Wins!")
+    alert("Computer Wins!"); computerScore += 1
     }
     else if (humanChoice === "scissors" && computerChoice === "rock"){
-        alert("Computer Wins!")
+        alert("Computer Wins!") ; computerScore += 1
         }
         else if (humanChoice === "scissors" && computerChoice === "paper"){
-            alert("You Win!")
+            alert("You Win!"); humanScore += 1
             }
             else if (humanChoice === "paper" && computerChoice === "rock"){
-                alert("You Win!")
+                alert("You Win!") ; humanScore += 1
                 }
                 else if (humanChoice === "rock" && computerChoice === "scissors"){
-                    alert("You Win!")
-                    }
+                    alert("You Win!");  humanScore += 1
+                    };
+                    console.log("The score is " + humanScore + " human"+ " - " + computerScore + " computer")
 
 }
 
+//PLAYGAME - 5 ROUNDS
 
-const humanChoice = getHumanChoice()
-const computerChoice = getComputerChoice()
+function playGame() {
 
-playRound(humanChoice, computerChoice)
+    const humanChoice1 = getHumanChoice()
+    const computerChoice1 = getComputerChoice();
+    playRound(humanChoice1, computerChoice1);
+
+
+    const humanChoice2 = getHumanChoice()
+    const computerChoice2 = getComputerChoice();
+    playRound(humanChoice2, computerChoice2);
+
+
+    const humanChoice3 = getHumanChoice()
+    const computerChoice3 = getComputerChoice();
+    playRound(humanChoice3, computerChoice3);
+
+
+    const humanChoice4 = getHumanChoice()
+    const computerChoice4 = getComputerChoice();
+    playRound(humanChoice4, computerChoice4);
+
+
+    const humanChoice5 = getHumanChoice()
+    const computerChoice5 = getComputerChoice();
+    playRound(humanChoice5, computerChoice5);
+
+    alert("The final score is " + humanScore + " human" + " - " + 
+        computerScore + " computer")
+    
+    
+}
+
+
+
+
+
+
+
+
+playGame()
 
 
 
