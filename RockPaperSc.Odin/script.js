@@ -19,9 +19,8 @@ window.onload = function() {
   
     
 
-
-
 let playerChoice;
+
 //Computer Choice!
 
 function getrandom(min, max) {
