@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUEGO</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+    <script>
+
+
+
+
+
+
+
+function getRandom(min, max) {
+
+let rnd = Math.random();
+let resdo = Math.floor(rnd*(max -  min + 1))  + min;
+console.log(resdo);
+
+if (resdo === 1){
+    oponente = "papel"
+    console.log("El oponente eligio " + oponente);
+
+}
+ else if (resdo === 2){
+    oponente = "piedra"
+    console.log("El oponente eligio " + oponente)
+    return
+}
+ else  {
+    oponente = "tijera"
+    console.log("El oponente eligio " + oponente)
+}
+}
+
+
+
+
+
+
+/*
+let age = prompt("¿Que edad tienes?")
+age = Number(age)
+
+if (isNaN(age)) {
+    alert("¡Eso no es un número!");
+} else if (age > 18) {
+    alert("¡Mayor de edad!");
+} else if (age < 18) {
+    alert("¡Menor de edad!");
+}
+ else {
+    alert("¡Exactamente 18 años!");
+}
+*/
+
+
+
+function getValue() { 
+      
+          let inputField = document.getElementById("userChoice");      
+          
+
+           if (inputField === "papel" ){
+              alert(inputField);
+              return 
+          }
+          else if (inputField === "piedra"){
+              alert(inputField); 
+              return
+          }
+          else if (inputField === "tijera"){
+              
+              alert(inputField)
+              return
+          }
+          
+         else if (inputField === ''){
+            
+            alert("¡Tienes que elegir entre piedra, papel o tijera!")
+          }
+          else {
+      alert("¡Tienes que elegir entre piedra, papel o tijera!");
+     
+      }
+      }
+
+
+
+
+
+
+
+      function playRound(humanChoice,computerChoice){
+
+
+
+        if (humanChoice === computerChoice ){
+    alert("empate!")}
+else if (humanChoice === "piedra" && computerChoice === "papel"){
+alert("Gana la computadora!")
+}
+else if (humanChoice === "papel" && computerChoice === "tijera"){
+    alert("Gana la computadora!")
+    }
+    else if (humanChoice === "tijera" && computerChoice === "piedra"){
+        alert("Gana la computadora!")
+        }
+        else if (humanChoice === "tijera" && computerChoice === "papel"){
+            alert("Ganaste!")
+            }
+            else if (humanChoice === "papel" && computerChoice === "piedra"){
+                alert("Ganaste!")
+                }
+                else if (humanChoice === "piedra" && computerChoice === "tijera"){
+                    alert("Ganaste!")
+                    }
+
+}
+
+
+const humanChoice = getValue()
+const computerChoice = getRandom()
+
+playRound(humanChoice, computerChoice)
+
+    
+
+
+
+
+  
+        </script>
+
+
+
+
+
+<div class="rect">
+    <h1>¿Piedra , papel o tijera?</h1>
+    <div class="choice">
+    
+    <div class="election"> <h2>Eleccion:</h2> </div>
+    <input type="text" name="inputing" id="userChoice">
+    <button onclick="playRound()">JUEGA!</button> 
+    </div>
+    <div class="oponent">
+    <h2>Tu oponente:</h2></div>
+</div>
+
+</body>
+</html>
+
+
